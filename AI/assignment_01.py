@@ -1,47 +1,45 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse
-
-
 # ! Show pseudo code & Flow chart
 
-# 1. Target URL from your class slides
 url = "https://en.wikipedia.org/wiki/Cambodia"
 
+headers = {
+    "User-Agent": "CambodiaLinkScraper/1.0 (wikipedia:en; User:SothVi)"
+}
+
 try:
-    # 2. Send a GET request to download the raw HTML content
-    response = requests.get(url)
+    # 1. Download the webpage
+    response = requests.get(url, headers=headers)
     response.raise_for_status()  # Ensures the request was successful
 
-    # 3. Parse the HTML content using BeautifulSoup
+    # 2. Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # 4. Find all structural hyperlink tags (<a>) and extract their href URLs
-    urls = []
-    for tag in soup.find_all('a'):
-        href = tag.get('href')
-        if href:  # Filters out empty links
-            urls.append(href)
+    # 3. Find the main container that stores the 3 paragraphs
+    content = soup.find(id='mw-content-text')
 
-    # 5. Open/create 'text.txt', write each URL on a new line, and close it
-    with open('text.txt', 'w', encoding='utf-8') as file:
-        for link in urls:
-            file.write(link + '\n')
+    # 4. Find article paragraphs and extract their text
+    if content:
+        paragraphs = []
+        for paragraph in content.select('section > p'):
+            # ? 'section > p' means it only takes <p> tags thats directly inside of the <section> tag.
+            #! if <p> for example is inside of another tag such as <div> it will not take that <p> tag.
+            text = paragraph.get_text(' ', strip=True)
+            # only appends if the text is not empty, literally (if text != "")
+            if text != "":
+                paragraphs.append(text)
 
-    print(
-        f"Success! Extracted {len(urls)} links and saved them to 'text.txt'.")
+    # 5. Write the first three paragraphs to text.txt
+        with open('text.txt', 'w', encoding='utf-8') as file:
+            # ? paragraphs[:3] selects the first 3 paragraphs
+            for text in paragraphs[:3]:
+                file.write(text + '\n\n')
+
+    # * show success message
+        print(f"extracted the first 3 paragraphs and saved them to 'text.txt'.")
+    else:
+        print("Could not find the article content.")
 
 except requests.exceptions.RequestException as e:
     print(f"Error fetching the webpage: {e}")
-
-
-def get_all_internal_links(base_url):
-    # * get link
-    print("Hello world")
-    # * let it find tags inside of the wikipedia page (the ones we need)
-
-    # * extract the raw HTML tags
-
-    # * Split the words (formatting the raw HTML tags to words)
-
-    # * put the extracted clean tags into a file (CSV, txt..etc)
