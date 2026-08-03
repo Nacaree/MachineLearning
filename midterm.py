@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 class BankAccount:
     def __init__(self, holder_name: str, balance: float):
-        self.holder_name = holder_name
-        self.balance = balance
+        self.holder_name = str(holder_name)
+        self.balance = float(balance)
         self.transaction_history = []
 
     def deposit(self, amount):
