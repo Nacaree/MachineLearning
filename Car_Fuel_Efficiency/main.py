@@ -133,6 +133,13 @@ plt.ylabel("Number of Cars")
 plt.show()
 
 # ? Stuff for 4.2
+correlation_matrix = df.corr()
+
+print("\nCorrelation with MPG:")
+print(correlation_matrix["mpg"].sort_values(ascending=False))
+
+# ? 4.3 Correlation Analysis
+# * vehicle weight vs fuel efficiency 
 plt.scatter(df["weight"], df["mpg"])
 
 plt.title("Vehicle Weight vs Fuel Efficiency")
@@ -140,7 +147,7 @@ plt.xlabel("Weight")
 plt.ylabel("Miles Per Gallon (MPG)")
 
 plt.show()
-
+# * horsepower vs fuel efficiency 
 plt.scatter(df["horsepower"], df["mpg"])
 
 plt.title("Horsepower vs Fuel Efficiency")
@@ -148,12 +155,6 @@ plt.xlabel("Horsepower")
 plt.ylabel("Miles Per Gallon (MPG)")
 
 plt.show()
-
-# ? 4.3 Correlation Analysis
-correlation_matrix = df.corr()
-
-print("\nCorrelation with MPG:")
-print(correlation_matrix["mpg"].sort_values(ascending=False))
 
 # * Step 11: Define X and y, then split the data
 
