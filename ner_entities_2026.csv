@@ -1,0 +1,67 @@
+Event ID,Month,Entity,Entity Type
+1,January,January 4,DATE
+1,January,Microsoft,ORG
+1,January,Satya Nadella,PERSON
+1,January,AI,GPE
+1,January,1,CARDINAL
+2,January,January 5–9,DATE
+2,January,2026,DATE
+2,January,2,CARDINAL
+3,January,January 7,DATE
+3,January,Steve Jobs,PERSON
+3,January,Apple,ORG
+3,January,50th,ORDINAL
+3,January,3,CARDINAL
+4,January,January 7,DATE
+4,January,Canadian,NORP
+4,January,the Canadian Federal Government,ORG
+4,January,Twitter,PERSON
+4,January,Deepfakes,ORG
+4,January,4,CARDINAL
+5,January,January 8,DATE
+5,January,Ubisoft Halifax,PERSON
+5,January,Ubisoft,GPE
+5,January,a month,DATE
+5,January,Canada,GPE
+5,January,first,ORDINAL
+5,January,5,CARDINAL
+6,February,February 23–26,DATE
+6,February,The Mobile World Congress,ORG
+6,February,MWC,ORG
+6,February,Barcelona,GPE
+6,February,2026,DATE
+6,February,Fira Barcelona Fira Gran Via,ORG
+6,February,Barcelona,GPE
+6,February,Spain,GPE
+6,February,The IQ Era,WORK_OF_ART
+6,February,5,CARDINAL
+6,February,IoT,ORG
+6,February,"over 109,000",CARDINAL
+6,February,205,CARDINAL
+6,February,6,CARDINAL
+7,March,March 2–5,DATE
+7,March,Mobile World Congress Barcelona 2026,ORG
+7,March,Fira Barcelona,GPE
+7,March,Fira Gran Vial,PERSON
+7,March,7,CARDINAL
+8,March,March 16–19,DATE
+8,March,Nvidia GPU Technology,ORG
+8,March,2026,DATE
+8,March,SAP,GPE
+8,March,San Jose,GPE
+8,March,California,GPE
+8,March,Jensen Huang,PERSON
+8,March,$1 trillion,MONEY
+8,March,Blackwell,PERSON
+8,March,Vera Rubin,GPE
+8,March,2027,DATE
+8,March,8,CARDINAL
+9,April,April 22-24 - Google Cloud Next 2026,DATE
+9,April,the Mandalay Bay Convention Centre,FAC
+9,April,the Lag Vegas,GPE
+9,April,Nevada,GPE
+9,April,"over 32,000",CARDINAL
+9,April,Google,ORG
+9,April,8th,ORDINAL
+9,April,Data Cloud,PERSON
+9,April,9,CARDINAL
